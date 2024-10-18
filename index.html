@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pet adoption</title>
+    <!-- daisyui cdn+ -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- lato font+ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome+ -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- style sheet+ -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- nav sta+rt -->
+    <nav
+      class="flex md:flex-row lg:flex-row justify-between items-center container mx-auto py-4"
+    >
+      <div class="flex gap-2">
+        <img src="./images/logo.webp" alt="" />
+        <h1 class="text-3xl font-bold">Peddy</h1>
+      </div>
+      <div class="flex gap-4">
+        <a href="http://">Home</a>
+        <a href="http://">Shop</a>
+        <a href="http://">Contact</a>
+      </div>
+      <div class="p-2 rounded-full border">
+        <i class="fa-regular fa-user"></i>
+      </div>
+    </nav>
+    <!-- nav end -->
+    <main class="container mx-auto">
+      <!-- hero section start -->
+      <section
+        class="flex-col justify-center items-center gap-8 text-center w-4/5 mx-auto"
+      >
+        <div class="flex-col justify-center items-center gap-8">
+          <h2 class="py-8">Bringing Families Together ❤️‍🔥</h2>
+          <h1 class="text-7xl font-bold lato-bold my-6">
+            Your Path to Adoption Starts Here
+          </h1>
+          <p>
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a.
+          </p>
+          <button
+            id="viewMoreButton"
+            class="py-4 px-8 bg-cyan-700 text-white rounded-xl my-5"
+          >
+            View More
+          </button>
+          <img
+            class="h-auto max-w-11/12 lg:max-w-lg mx-auto rounded-lg"
+            src="./images/pet.webp"
+            alt=""
+          />
+        </div>
+        <div class="my-4" id="adoptSection">
+          <h1 class="text-5xl font-bold">Adopt your Best Friend</h1>
+          <p class="my-4">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a.
+          </p>
+        </div>
+      </section>
+      <!-- hero section end -->
+      <nav></nav>
+      <!-- category button section start -->
+      <div
+        id="pet-categories"
+        class="flex gap-4 justify-center lg:justify-between items-center my-4"
+      ></div>
+      <section>
+        <div class="flex justify-between items-center my-5">
+          <h1 class="text-2xl font-bold text-black">Best Deal For You</h1>
+          <button class="py-4 px-8 bg-cyan-700 text-white rounded-xl my-5">
+            Sort By Price
+          </button>
+        </div>
+      </section>
+      <!-- category button section end -->
+      <!-- card section atart -->
+      <div class="my-12">
+        <div
+          class="grid grid-cols-1 md: grid-cols-3 lg: grid-cols-4 gap-8 px-2"
+        >
+          <!-- card section -->
+          <div class="lg:col-span-3">
+            <!-- spinner -->
+            <div id="loader" class="hidden">
+              <div class="relative flex justify-center items-center">
+                <div
+                  class="absolute animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-teal-700"
+                ></div>
+                <img src="./images/logo.webp" class="rounded-full" />
+              </div>
+            </div>
+            <!-- cards -->
+            <div
+              id="all-pets"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              <!-- dynamic pet cards here -->
+            </div>
+          </div>
+          <!-- images section -->
+          <div class=""></div>
+        </div>
+      </div>
+      <!-- card section end -->
+      <!-- pet details modal start -->
+      <div id="pet-details-container"></div>
+      <div id="addopt-modal">
+        <dialog id="my_modal_2" class="modal">
+          <div
+            class="modal-box flex flex-col gap-10 justify-center items-center"
+          >
+            <i class="fa-solid fa-handshake text-8xl text-orange-500"></i>
+            <h1 class="text-4xl font-bold">congratulation</h1>
+            <p class="text-2xl font-bold text-lime-800" id="countdown">3</p>
+          </div>
+          <span id="closeModal">&times;</span>
+        </dialog>
+      </div>
+
+      <!-- pet details modal end -->
+      <!-- countdown modal start -->
+      <!-- Open the modal using ID.showModal() method -->
+      <!-- <button class="btn" onclick="">open modal</button> -->
+
+      <!-- countdown modal end -->
+    </main>
+    <!-- footer  -->
+    <div class="bg-black">
+      <footer class="footer text-neutral-content p-10 container mx-auto">
+        <nav>
+          <div class="container mx-auto text-white p-4">
+            <div class="flex gap-2">
+              <img src="./images/logo.webp" alt="" />
+              <h1 class="text-3xl font-bold">Peddy</h1>
+            </div>
+            <p class="text-gray-500">
+              Location: av. Washington 165, NY CA <br />
+              54003 Phone: +31 85 964 47 25<br />
+              Email: info@yourdomain.com<br />
+              Openings hours: 9.00 AM - 5.00 PM
+            </p>
+            <div class="flex gap-4">
+              <img class="w-8 h-8" src="./images/facebook.png" alt="" />
+              <img class="w-8 h-8" src="./images/youtube.png" alt="" />
+              <img class="w-8 h-8" src="./images/x.png" alt="" />
+              <img class="w-8 h-8" src="./images/nstagram.png" alt="" />
+            </div>
+          </div>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Useful Links</h6>
+          <a class="link link-hover">Home</a>
+          <a class="link link-hover">About us</a>
+          <a class="link link-hover">Contact</a>
+          <a class="link link-hover">Animals</a>
+          <a class="link link-hover">Foundation</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Drop A Message</h6>
+          <input
+            class="bg-gray-800 p-4 rounded-lg"
+            type="text"
+            placeholder="Enter Your Email"
+          />
+          <button class="py-4 px-8 bg-cyan-700 text-white rounded-xl my-5">
+            subscribe
+          </button>
+        </nav>
+      </footer>
+    </div>
+    <!-- <footer class="bg-black">
+      <div
+        class="flex justify-center items-center object-center container mx-auto"
+      >
+        <div class="container mx-auto text-white p-4">
+          <div class="flex gap-2">
+            <img src="./images/logo.webp" alt="" />
+            <h1 class="text-3xl font-bold">Peddy</h1>
+          </div>
+          <p>
+            Location: av. Washington 165, NY CA <br />
+            54003 Phone: +31 85 964 47 25<br />
+            Email: info@yourdomain.com<br />
+            Openings hours: 9.00 AM - 5.00 PM
+          </p>
+          <div class="flex gap-2">
+            <img class="w-5 h-5" src="./images/facebook.png" alt="" />
+            <img class="w-5 h-5" src="./images/youtube.png" alt="" />
+            <img class="w-5 h-5" src="./images/x.png" alt="" />
+            <img class="w-5 h-5" src="./images/nstagram.png" alt="" />
+          </div>
+        </div>
+        <div class=" ">
+          <h1 class="text-white font-bold">Useful Links</h1>
+          <nav class="flex-col w-32 text-gray-50">
+            <a href="">Home</a>
+            <a href="">About Us</a>
+            <a href="">Animals</a>
+            <a href="">Foundation</a>
+            <a href="">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <h1 class="text-white">Drop A Message</h1>
+          <input type="text" />
+          <button class="py-4 px-8 bg-cyan-700 text-white rounded-xl my-5">
+            subscribe
+          </button>
+        </div>
+      </div>
+    </footer> -->
+    <script src="./scripts/utilities.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
